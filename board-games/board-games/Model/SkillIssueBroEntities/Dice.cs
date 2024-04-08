@@ -8,11 +8,11 @@ namespace board_games.Model.SkillIssueBroEntities
 {
     internal class Dice
     {
-        private Random randomizer = new Random();
+        private Random _randomizer = new Random();
         
         public int RollDice()
         {
-            return randomizer.Next(1, 7);
+            return _randomizer.Next(1, 7);
         }
     }
 }

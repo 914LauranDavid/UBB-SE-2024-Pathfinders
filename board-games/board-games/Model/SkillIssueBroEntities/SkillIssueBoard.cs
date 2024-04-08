@@ -9,23 +9,24 @@ namespace board_games.Model.SkillIssueBroEntities
 {
     internal class SkillIssueBoard : Games
     {
-        private int currentPlayerId;
-        private List<Player> players;
-        private List<Pawn> pawns;
-        private List<Tile> tiles;
-        private Dice sixSidedDice;
+        private int _currentPlayerId;
+        private List<Player> _players;
+        private List<Pawn> _pawns;
+        private List<Tile> _tiles;
+        private Dice _sixSidedDice;
 
-        public SkillIssueBoard(int gameId, List<Player> players) : base(gameId)
+        public SkillIssueBoard(int gameId,List<Tile> tiles,List<Pawn> pawns, List<Player> players, int idOfFirstPlayerToRoll) : base(gameId)
         {
-            this.players = players;
-
-            //subject to change, only to get an idea of how it works
-            currentPlayerId = players[0].GetPlayerId();
+            _tiles = tiles;
+            _players = players;
+            _currentPlayerId = idOfFirstPlayerToRoll;
+            _sixSidedDice = new Dice();
+            _pawns = pawns;
         }
 
         public override List<Player> GetPlayers()
         {
-            return players;
+            return _players;
         }
 
         public override void SaveGameState()
@@ -45,17 +46,17 @@ namespace board_games.Model.SkillIssueBroEntities
 
         public List<Tile> GetTiles()
         {
-            return tiles;
+            return _tiles;
         }
 
         public List<Pawn> GetPawns()
         {
-            return pawns;
+            return _pawns;
         }
 
         public Dice GetDice()
         {
-            return sixSidedDice;
+            return _sixSidedDice;
         }
     }
 }

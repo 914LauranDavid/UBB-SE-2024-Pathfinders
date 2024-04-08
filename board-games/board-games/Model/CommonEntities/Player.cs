@@ -8,20 +8,20 @@ namespace board_games.Model.CommonEntities
 {
     internal class Player
     {
-        private int playerId;
-        private string playerName;
+        private int _playerId;
+        private string _playerName;
 
         public Player(int playerId, string playerName)
         {
-            this.playerId = playerId;
-            this.playerName = playerName;
+            this._playerId = playerId;
+            this._playerName = playerName;
         }
 
         public string GetPlayerName()
         {
-            return playerName;
+            return _playerName;
         }
-        public int GetPlayerId() {  return playerId; }
+        public int GetPlayerId() {  return _playerId; }
 
         /* todo: add completed achievements */
 
