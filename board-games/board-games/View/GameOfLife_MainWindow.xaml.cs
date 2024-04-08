@@ -24,13 +24,14 @@ namespace board_games
         private const int NumberOfEventTilesByCategory = 10;
         private const int TotalNumberOfEventTiles = 3 * NumberOfEventTilesByCategory;
         private const int NumberOfGreenTiles = 8;
+        private const string tileNameCommonRoot = "Tile";
         public GameOfLife_MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
         }
         /// <summary>
-        /// Generates a list of unique random integers within the specified range.
+        /// Generates a list of unique random integers from 1 to 80 (inclusive)
         /// </summary>
         /// <param name="numberOfIndices">The number of random integers to generate.</param>
         /// <returns>A list of unique random integers.</returns>
@@ -69,7 +70,6 @@ namespace board_games
             int nextIndex = 0;
             List<int> indicesToColor = GenerateRandomIndices(TotalNumberOfEventTiles + NumberOfGreenTiles);
             List<int> indicesOfGreenTiles = indicesToColor.GetRange(nextIndex, NumberOfGreenTiles);
-            // ff96bb20
             ColorTiles(indicesOfGreenTiles, Color.FromRgb(150,187,32));
             nextIndex = NumberOfGreenTiles;
             List<int> indicesOfRedTiles = indicesToColor.GetRange(nextIndex, NumberOfEventTilesByCategory);
@@ -89,14 +89,13 @@ namespace board_games
         private void ColorTiles(List<int> tileIndexesToColor, Color givenBrushColor)
         {
             SolidColorBrush currentBrush = new SolidColorBrush(givenBrushColor);
+            string currentTileName;
             
-            string currentTileName = "Tile";
             foreach(int tileIndex in tileIndexesToColor)
             {
-                currentTileName = currentTileName + tileIndex.ToString();
+                currentTileName = tileNameCommonRoot + tileIndex.ToString();
                 Path currentTile = (Path)FindName(currentTileName);
                 currentTile.Fill = currentBrush;
-                currentTileName = "Tile";
             }
         }
     }
