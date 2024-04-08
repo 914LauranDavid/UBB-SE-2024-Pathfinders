@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace board_games.Model.Logging
 {
+    /// <summary>
+    /// Simple thread-safe implementation of IFileLogger. 
+    /// </summary>
     public class SimpleFileLogger : IFileLogger
     {
         private const string _defaultFileName = "logs.txt";
