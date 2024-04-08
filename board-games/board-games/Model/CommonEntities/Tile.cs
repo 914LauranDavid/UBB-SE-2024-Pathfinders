@@ -9,11 +9,18 @@ namespace board_games.Model.CommonEntities
     internal class Tile
     {
         private int tileId;
-        private float xPosition;
-        private float yPosition;
+        private float centerXPosition;
+        private float centerYPosition;
 
-        public float GetXPosition() { return xPosition; }
-        public float GetYPosition() { return yPosition; }
+        public Tile(int tileId, float centerXPosition, float centerYPosition)
+        {
+            this.tileId = tileId;
+            this.centerXPosition = centerXPosition;
+            this.centerYPosition = centerYPosition;
+        }
+
+        public float GetCenterXPosition() { return centerXPosition; }
+        public float GetCenterYPosition() { return centerYPosition; }
         public int GetTileId() { return tileId; }
     }
 }
