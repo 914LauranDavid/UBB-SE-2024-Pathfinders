@@ -12,6 +12,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Controller\" />
+    <Folder Include="Resources\" />
     <Folder Include="View\" />
   </ItemGroup>
 
