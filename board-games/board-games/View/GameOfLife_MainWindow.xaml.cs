@@ -18,7 +18,7 @@ namespace board_games
     /// <summary>
     /// Interaction logic for GameOfLife_MainWindow.xaml
     /// </summary>
-    public partial class GameOfLife_MainWindow : Window
+    public partial class GameOfLife_MainWindow
     {
         private const int NumberOfTiles = 80;
         private const int NumberOfEventTilesByCategory = 10;
@@ -28,7 +28,7 @@ namespace board_games
         public GameOfLife_MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            Loaded += GameOfLife_MainWindow_Loaded;
         }
         /// <summary>
         /// Generates a list of unique random integers from 1 to 80 (inclusive)
@@ -65,7 +65,7 @@ namespace board_games
             }
             return randomNumbersList;
         }
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void GameOfLife_MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             int nextIndex = 0;
             List<int> indicesToColor = GenerateRandomIndices(TotalNumberOfEventTiles + NumberOfGreenTiles);

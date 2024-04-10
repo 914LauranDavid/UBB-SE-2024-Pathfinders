@@ -1,10 +1,10 @@
-﻿<Window x:Class="board_games.GameOfLife_MainWindow"
+﻿<UserControl x:Class="board_games.GameOfLife_MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="GameOfLife_MainWindow" d:DesignHeight="571.16" d:DesignWidth="1054.983">
+        d:DesignHeight="571.16" d:DesignWidth="1054.983">
 
     <Viewbox xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Name="MAIN_GAME_Canvas_xaml">
         <Canvas x:Name="GameCanvas" UseLayoutRounding="False" Width="1920.0" Height="1080.0">
@@ -1355,4 +1355,4 @@
         </Canvas>
     </Viewbox>
 
-</Window>
+</UserControl>

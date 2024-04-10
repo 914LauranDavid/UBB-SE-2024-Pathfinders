@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:board_games"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" d:DesignHeight="353.69" d:DesignWidth="631.857">
+    <Frame x:Name="MainFrame" Content="Frame" HorizontalAlignment="Center" VerticalAlignment="Top" NavigationUIVisibility="Hidden"/>
 
-    </Grid>
 </Window>
