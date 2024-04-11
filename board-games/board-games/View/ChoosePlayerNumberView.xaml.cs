@@ -49,5 +49,10 @@ namespace board_games.View
                 PlayerNumberTextBlock.Text = _playerNumber.ToString();
             }
         }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Host_WaitingForPlayersView(_playerNumber));
+        }
     }
 }
