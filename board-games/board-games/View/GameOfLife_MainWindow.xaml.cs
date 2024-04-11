@@ -1,4 +1,8 @@
-﻿using System;
+﻿using board_games.Model.GameOfLife.Cards;
+using board_games.Model.GameOfLife.Cards.Effect;
+using board_games.Model.Logging;
+using board_games.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;

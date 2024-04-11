@@ -22,5 +22,17 @@ namespace board_games.Model.GameOfLife.Cards.Effect
         {
             throw new NotImplementedException("DoEffect will be implemented");
         }
+
+        public override string serializeIntoConstructorString()
+        {
+            if (this._additionalEffect == null)
+            {
+                return this.GetType().Name + "()";
+            }
+            else
+            {
+                return this.GetType().Name + "(" + this._additionalEffect.serializeIntoConstructorString() + ")";
+            }
+        }
     }
 }

@@ -15,5 +15,7 @@ namespace board_games.Model.GameOfLife.Cards.Effect
         {
             return _additionalEffect;
         }
+
+        public abstract String serializeIntoConstructorString();
     }
 }

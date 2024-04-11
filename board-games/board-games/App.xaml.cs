@@ -9,6 +9,7 @@ namespace board_games
     /// </summary>
     public partial class App : Application
     {
+
     }
 
 }

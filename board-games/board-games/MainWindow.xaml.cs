@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using board_games.Model.GameOfLife.Cards.Effect;
+using board_games.Model.Logging;
+using board_games.Repository;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;

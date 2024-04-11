@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "board-games": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Alin\\Documents\\Workspace\\space"
+    }
+  }
+}

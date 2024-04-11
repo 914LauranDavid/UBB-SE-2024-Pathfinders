@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace board_games.Model.GameOfLife.Cards
+namespace board_games.Repository
 {
-    public enum CardType
+    internal abstract class ISiBRepository
     {
-        Health = 0,
-        Career = 1,
-        Social = 2
+
+
     }
 }
