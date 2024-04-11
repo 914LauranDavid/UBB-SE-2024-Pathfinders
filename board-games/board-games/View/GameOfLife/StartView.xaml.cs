@@ -1,4 +1,5 @@
-﻿using System;
+﻿using board_games.View.GameOfLife;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,11 @@ namespace board_games.View
             // Should go to Choose Game Page
             
             throw new NotImplementedException();
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Settings());
         }
     }
 }
