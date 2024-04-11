@@ -63,7 +63,7 @@ namespace board_games.View.GameOfLife
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new StartView());
+            this.NavigationService.Navigate(new Settings());
         }
     }
 }

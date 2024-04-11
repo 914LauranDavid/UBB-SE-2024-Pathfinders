@@ -35,5 +35,10 @@ namespace board_games.View.GameOfLife
         {
             this.NavigationService.Navigate(new PawnStyle());
         }
+
+        private void ChooseBoardStyleButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new BoardStyle());
+        }
     }
 }

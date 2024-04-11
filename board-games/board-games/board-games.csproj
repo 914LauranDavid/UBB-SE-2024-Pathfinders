@@ -10,6 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\board_style_dark.png" />
+    <None Remove="Resources\board_style_light.png" />
+    <None Remove="Resources\choose_board_style.png" />
     <None Remove="Resources\choose_pawn_style.png" />
     <None Remove="Resources\choose_player_number_background.png" />
     <None Remove="Resources\clouds.jpg" />
@@ -22,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\board_style_dark.png" />
+    <Resource Include="Resources\board_style_light.png" />
+    <Resource Include="Resources\choose_board_style.png" />
     <Resource Include="Resources\choose_pawn_style.png" />
     <Resource Include="Resources\choose_player_number_background.png" />
     <Resource Include="Resources\Fonts\ZenDots-Regular.ttf">
