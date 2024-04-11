@@ -12,6 +12,12 @@ namespace board_games.Model.CommonEntities
         private Tile _occupiedTile;
         private Player _associatedPlayer;
 
+        public Pawn(int pawnId, Tile occupiedTile)
+        {
+            _pawnId = pawnId;
+            _occupiedTile = occupiedTile;
+        }
+
         public Pawn(int pawnId, Tile occupiedTile, Player associatedPlayer)
         {
             _pawnId = pawnId;
@@ -29,6 +35,11 @@ namespace board_games.Model.CommonEntities
         public int GetPawnId() { return _pawnId; }
         public Player GetPlayer() {
             return _associatedPlayer;
+        }
+
+        public void SetAssociatedPlayer(Player associatedPlayer)
+        {
+            _associatedPlayer = associatedPlayer;
         }
 
     }

@@ -10,8 +10,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\choose_player_number_background.png" />
+    <None Remove="Resources\clouds.jpg" />
+    <None Remove="Resources\Fonts\ZenDots-Regular.ttf" />
+    <None Remove="Resources\host_join_background.png" />
+    <None Remove="Resources\host_waiting_for_players.png" />
+    <None Remove="Resources\join_existing_game_background.png" />
+    <None Remove="Resources\main_background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\choose_player_number_background.png" />
+    <Resource Include="Resources\Fonts\ZenDots-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Resources\" />
+    <Folder Include="Model\Database\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\clouds.jpg" />
+    <Resource Include="Resources\host_join_background.png" />
+    <Resource Include="Resources\host_waiting_for_players.png" />
+    <Resource Include="Resources\join_existing_game_background.png" />
+    <Resource Include="Resources\main_background.png" />
   </ItemGroup>
 
 </Project>

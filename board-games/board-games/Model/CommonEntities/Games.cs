@@ -14,8 +14,10 @@ namespace board_games.Model.CommonEntities
 
         public Games(int gameId)
         {
-            this.gameId = gameId;
+           this.gameId = gameId;
         }
+
+
 
         public int GetGameId() { return gameId; }
         public abstract void UpdateLeaderboard(Leaderboard leaderboard);

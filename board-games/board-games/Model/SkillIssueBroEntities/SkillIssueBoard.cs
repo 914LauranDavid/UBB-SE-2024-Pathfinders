@@ -12,12 +12,12 @@ namespace board_games.Model.SkillIssueBroEntities
         private int _currentPlayerId;
         private List<Player> _players;
         private List<Pawn> _pawns;
-        private List<Tile> _tiles;
+        private List<SiBTile> _sibTiles;
         private Dice _sixSidedDice;
 
-        public SkillIssueBoard(int gameId,List<Tile> tiles,List<Pawn> pawns, List<Player> players, int idOfFirstPlayerToRoll) : base(gameId)
+        public SkillIssueBoard(int gameId, List<SiBTile> tiles,List<Pawn> pawns, List<Player> players, int idOfFirstPlayerToRoll):base(gameId)
         {
-            _tiles = tiles;
+            _sibTiles = tiles;
             _players = players;
             _currentPlayerId = idOfFirstPlayerToRoll;
             _sixSidedDice = new Dice();
@@ -44,9 +44,9 @@ namespace board_games.Model.SkillIssueBroEntities
             throw new NotImplementedException();
         }
 
-        public List<Tile> GetTiles()
+        public List<SiBTile> GetTiles()
         {
-            return _tiles;
+            return _sibTiles;
         }
 
         public List<Pawn> GetPawns()

@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 namespace board_games.Model.GameOfLife.Cards
 {
     /// <summary>
-    /// will be implemented by another team, not by Pathfinders (?)
+    /// used by CustomizableTexture
     /// </summary>
     public class Texture
     {
-        public Texture()
-        {
+        public string BorderHexColor { get; set; }
 
+        public Texture(string borderHexColor)
+        {
+            BorderHexColor = borderHexColor;
         }
     }
 }
