@@ -1,4 +1,5 @@
-﻿using System;
+﻿using board_games.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -97,6 +98,11 @@ namespace board_games
                 Path currentTile = (Path)FindName(currentTileName);
                 currentTile.Fill = currentBrush;
             }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new HostJoinView());
         }
     }
 }

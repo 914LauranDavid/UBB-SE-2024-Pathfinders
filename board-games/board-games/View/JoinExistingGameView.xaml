@@ -31,6 +31,7 @@
             </Canvas>
             <Button x:Name="BackButton" Content="" Height="62" Canvas.Left="1808" Canvas.Top="976" Width="56" BorderBrush="Transparent" Background="Transparent" Click="BackButton_Click"/>
             <TextBox Height="132" Canvas.Left="443" TextWrapping="Wrap" Canvas.Top="715" Width="816" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="90"/>
+            <Button x:Name="JoinGameButton" Content="" Height="142" Canvas.Left="1414" Canvas.Top="715" Width="270" BorderBrush="Transparent" Background="Transparent" Click="JoinGameButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Canvas>
     </Viewbox>
 

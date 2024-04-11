@@ -16,23 +16,18 @@ using System.Windows.Shapes;
 namespace board_games.View
 {
     /// <summary>
-    /// Interaction logic for JoinExistingGameView.xaml
+    /// Interaction logic for Join_WaitingForPlayersView.xaml
     /// </summary>
-    public partial class JoinExistingGameView : Page
+    public partial class Join_WaitingForPlayersView : Page
     {
-        public JoinExistingGameView()
+        public Join_WaitingForPlayersView()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new HostJoinView());
-        }
-
-        private void JoinGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new GameOfLife_MainWindow());
+            this.NavigationService.Navigate(new JoinExistingGameView());
         }
     }
 }
