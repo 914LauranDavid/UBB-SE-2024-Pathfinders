@@ -1,4 +1,5 @@
-﻿using board_games.View.SkillIssueBro.Menus;
+﻿using board_games.View.Achievements;
+using board_games.View.SkillIssueBro.Menus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace board_games.View
 
 
             this.NavigationService.Navigate(new StartView());
+        }
+
+        private void OnMyAchievementsClick(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AchievementPage());
         }
 
     }

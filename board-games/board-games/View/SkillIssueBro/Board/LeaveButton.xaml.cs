@@ -20,9 +20,15 @@ namespace board_games.View.SkillIssueBro.Board
     /// </summary>
     public partial class LeaveButton : UserControl
     {
+        public event EventHandler ButtonClicked;
         public LeaveButton()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

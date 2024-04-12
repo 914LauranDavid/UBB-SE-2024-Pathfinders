@@ -37,7 +37,17 @@ namespace board_games.View.Achievements
 
         private void LoadAchivements()
         {
-            //db call
+            // to be replaced by db/repository call
+
+            Achievement firstAchievement = new Achievement(1, "Rich man", "Be the first to reach $100k", GameCategory.GameOfLife);
+            Achievement secondAchievement = new Achievement(2, "Strategist", "Knock 3 opponent pawns off the final tiles in a match", GameCategory.SkillIssueBro);
+
+            AddAchivementToStack(firstAchievement);
+            AddAchivementToStack(secondAchievement);
+        }
+
+        private void OnClickBack()
+        {
         }
     }
 }

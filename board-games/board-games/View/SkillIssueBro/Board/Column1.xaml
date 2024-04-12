@@ -16,7 +16,7 @@
             <RowDefinition Height="365.4"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <local:LeaveButton></local:LeaveButton>
+        <local:LeaveButton x:Name="leaveButton"></local:LeaveButton>
         <!--<Dice:DiceWithNumber6 Grid.Row="1"></Dice:DiceWithNumber6>-->
         <local:RollButton x:Name="rollButton" Grid.Row="1"></local:RollButton>
         

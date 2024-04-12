@@ -35,7 +35,7 @@
             </Grid.RowDefinitions>
 
 
-            <Button Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
+            <Button Click="OnChooseTwoPlayers" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
                 <Border  >
 
                     <Border.Effect>
@@ -48,8 +48,8 @@
                 </Border>
             </Button>
 
-            <Button Grid.Column="1" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
-                <Border  >
+                <Button Click="OnChooseThreePlayers" Grid.Column="1" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
+                    <Border  >
 
                     <Border.Effect>
                         <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="5" Opacity="0.7"/>
@@ -60,8 +60,8 @@
 
                 </Border>
             </Button>
-            <Button Grid.Column="3" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
-                <Border  >
+                <Button Click="OnChooseFourPlayers" Grid.Column="3" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Width="320" Height="167">
+                    <Border  >
 
                     <Border.Effect>
                         <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="5" Opacity="0.7"/>

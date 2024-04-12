@@ -32,8 +32,8 @@
 
             <TextBlock FontSize="70" FontWeight="Medium" Foreground="Blue" HorizontalAlignment="Left" Margin="188,10,0,10" Width="355">Enter code:</TextBlock>
             <TextBox Grid.Column="1" Margin="0,40,146,40"></TextBox>
-            <Button VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Height="200" Margin="690,10,146,0">
-                <Border  >
+                <Button Click="OnClickJoin" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="50" Height="200" Margin="690,10,146,0">
+                    <Border  >
 
                     <Border.Effect>
                         <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="5" Opacity="0.7"/>

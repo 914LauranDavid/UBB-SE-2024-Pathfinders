@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using board_games.View.SkillIssueBro.Board;
 
 namespace board_games.View.SkillIssueBro.Menus
 {
@@ -30,6 +31,21 @@ namespace board_games.View.SkillIssueBro.Menus
 
 
             this.NavigationService.Navigate(new SkillIssueBroMainMenu());
+        }
+
+        private void OnChooseTwoPlayers(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new GameBoardWindow());
+        }
+        
+        private void OnChooseThreePlayers(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new GameBoardWindow());
+        }
+        
+        private void OnChooseFourPlayers(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new GameBoardWindow());
         }
     }
 }

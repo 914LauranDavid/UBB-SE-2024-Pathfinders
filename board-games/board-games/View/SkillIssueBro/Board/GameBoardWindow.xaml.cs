@@ -80,6 +80,7 @@ namespace board_games.View.SkillIssueBro.Board
             ellipse.Height = 100;
             ellipse.Width = 100;
             column2.column2Grid.Children.Add(ellipse);
+            
         }
 
         private void HideDice()

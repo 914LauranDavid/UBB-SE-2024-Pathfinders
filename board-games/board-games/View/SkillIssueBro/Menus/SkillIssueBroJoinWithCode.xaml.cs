@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using board_games.View.SkillIssueBro.Board;
 
 namespace board_games.View.SkillIssueBro.Menus
 {
@@ -23,6 +24,11 @@ namespace board_games.View.SkillIssueBro.Menus
         public SkillIssueBroJoinWithCode()
         {
             InitializeComponent();
+        }
+
+        private void OnClickJoin(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new GameBoardWindow());
         }
     }
 }
