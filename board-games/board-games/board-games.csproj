@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\board_style_dark.png" />
+    <None Remove="Resources\board_style_light.png" />
+    <None Remove="Resources\cardset_dark.png" />
+    <None Remove="Resources\cardset_light.png" />
+    <None Remove="Resources\choose_board_style.png" />
+    <None Remove="Resources\choose_cardset_style.png" />
+    <None Remove="Resources\choose_pawn_style.png" />
     <None Remove="Resources\choose_player_number_background.png" />
     <None Remove="Resources\clouds.jpg" />
     <None Remove="Resources\Fonts\ZenDots-Regular.ttf" />
@@ -17,9 +24,17 @@
     <None Remove="Resources\host_waiting_for_players.png" />
     <None Remove="Resources\join_existing_game_background.png" />
     <None Remove="Resources\main_background.png" />
+    <None Remove="Resources\settings_background.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\board_style_dark.png" />
+    <Resource Include="Resources\board_style_light.png" />
+    <Resource Include="Resources\cardset_dark.png" />
+    <Resource Include="Resources\cardset_light.png" />
+    <Resource Include="Resources\choose_board_style.png" />
+    <Resource Include="Resources\choose_cardset_style.png" />
+    <Resource Include="Resources\choose_pawn_style.png" />
     <Resource Include="Resources\choose_player_number_background.png" />
     <Resource Include="Resources\Fonts\ZenDots-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -37,6 +52,7 @@
     <Resource Include="Resources\host_waiting_for_players.png" />
     <Resource Include="Resources\join_existing_game_background.png" />
     <Resource Include="Resources\main_background.png" />
+    <Resource Include="Resources\settings_background.png" />
   </ItemGroup>
 
 </Project>

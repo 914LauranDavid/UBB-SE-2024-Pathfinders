@@ -13,7 +13,7 @@
             <Canvas.Clip>
                 <RectangleGeometry Rect="0.0,0.0,1920.0,1080.0"/>
             </Canvas.Clip>
-            <Image Source="../Resources/join_existing_game_background.png" Width="1920" Height="1080"/>
+            <Image Source="../../Resources/join_existing_game_background.png" Width="1920" Height="1080"/>
             <Canvas UseLayoutRounding="False">
                 <Canvas.Clip>
                     <RectangleGeometry Rect="0.0,0.0,1920.0,1080.0"/>
