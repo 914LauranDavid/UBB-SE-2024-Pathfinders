@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Viewbox xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Name="StartWindowImageBackground_xaml">
         <Canvas UseLayoutRounding="False" Width="1920.0" Height="1080.0">
-            <Image Source="../Resources/main_background.png" Width="1920" Height="1080"/>
+            <Image Source="../../Resources/main_background.png" Width="1920" Height="1080"/>
 
             <Canvas UseLayoutRounding="False">
 
@@ -43,33 +43,9 @@
                         </DrawingBrush.Drawing>
                     </DrawingBrush>
                 </Canvas.OpacityMask>
-                <Canvas UseLayoutRounding="False">
-                    <Canvas.OpacityMask>
-                        <DrawingBrush ViewportUnits="Absolute" ViewboxUnits="Absolute" Viewbox="1778.0 963.0 73.0 74.0" Viewport="1778.0 963.0 73.0 74.0">
-                            <DrawingBrush.Drawing>
-                                <DrawingGroup>
-                                    <GeometryDrawing Brush="#ffffffff">
-                                        <GeometryDrawing.Geometry>
-                                            <PathGeometry Figures="M 1851 963.004 H 1778 V 1036 H 1851 V 963.004 Z" FillRule="Nonzero"/>
-                                        </GeometryDrawing.Geometry>
-                                    </GeometryDrawing>
-                                </DrawingGroup>
-                            </DrawingBrush.Drawing>
-                        </DrawingBrush>
-                    </Canvas.OpacityMask>
-                    <Path Stroke="#ffffffff" StrokeLineJoin="Round" StrokeThickness="7.0" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round">
-                        <Path.Data>
-                            <PathGeometry Figures="M 1823.63 975.17 H 1793.21 V 1017.75 C 1793.21 1021.11 1795.93 1023.84 1799.29 1023.84 H 1823.63" FillRule="Nonzero"/>
-                        </Path.Data>
-                    </Path>
-                    <Path Stroke="#ffffffff" StrokeLineJoin="Round" StrokeThickness="7.0" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round">
-                        <Path.Data>
-                            <PathGeometry Figures="M 1826.67 1008.63 L 1835.79 999.503 M 1835.79 999.503 L 1826.67 990.378 M 1835.79 999.503 H 1805.38" FillRule="Nonzero"/>
-                        </Path.Data>
-                    </Path>
-                </Canvas>
             </Canvas>
-            <Button Content="" Height="72" Canvas.Left="1784" Canvas.Top="963" Width="68" BorderBrush="Transparent" Background="Transparent" Click="BackButton_Click"/>
+            <Button x:Name="BackButton" Content="" Height="72" Canvas.Left="1790" Canvas.Top="964" Width="68" BorderBrush="Transparent" Background="Transparent" Click="BackButton_Click"/>
+            <Button x:Name="SettingsButton" Content="" Height="80" Canvas.Left="1680" Canvas.Top="960" Width="79" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SettingsButton_Click"/>
         </Canvas>
     </Viewbox>
 </Page>

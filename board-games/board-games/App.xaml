@@ -4,7 +4,6 @@
              xmlns:views="clr-namespace:board_games.View"
              xmlns:local="clr-namespace:board_games"
              StartupUri="MainWindow.xaml">  
-
     <!--Here, I changed STARTUP WINDOW/PAGE-->
     <Application.Resources>
         <!--<FontFamily x:Key="ZenDotsFont">/board_games;component/Resources/ZenDots-Regular.ttf#Zen Dots</FontFamily>-->

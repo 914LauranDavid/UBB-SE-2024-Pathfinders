@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Width="91" Height="91" HorizontalAlignment="Center">
-        <Button   Width="52" Height="65" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" >
+        <Button x:Name="button"  Width="52" Height="65" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" >
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Transparent"/>

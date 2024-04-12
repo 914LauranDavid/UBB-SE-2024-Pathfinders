@@ -1,6 +1,7 @@
 ﻿using board_games.View.SkillIssueBro.Pawns;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace board_games.View.SkillIssueBro.Board
     /// </summary>
     public partial class GameBoard : UserControl
     {
+        public event EventHandler<PawnClickedEventArgs> PawnClicked;
         public GameBoard()
         {
             InitializeComponent();
@@ -29,9 +31,28 @@ namespace board_games.View.SkillIssueBro.Board
         public void AddBluePawn(int column, int row)
         {
             var bluePawn = new PawnBlue();
+            
             Grid.SetColumn(bluePawn, column);
             Grid.SetRow(bluePawn, row);
             MainGrid.Children.Add(bluePawn);
+            bluePawn.button.Click += OnPawnClicked;
+        }
+
+        private void OnPawnClicked(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.Parent is Grid grid)
+                {
+                    if (grid.Parent is UserControl pawn)
+                    {
+                        int column = Grid.GetColumn(pawn);
+                        int row = Grid.GetRow(pawn);
+
+                        PawnClicked?.Invoke(this, new PawnClickedEventArgs(column, row));
+                    }
+                }
+            }
         }
 
         public void AddYellowPawn(int column, int row)
@@ -40,6 +61,7 @@ namespace board_games.View.SkillIssueBro.Board
             Grid.SetColumn(yellowPawn, column);
             Grid.SetRow(yellowPawn, row);
             MainGrid.Children.Add(yellowPawn);
+            yellowPawn.button.Click += OnPawnClicked;
         }
 
         public void AddGreenPawn(int column, int row)
@@ -48,6 +70,7 @@ namespace board_games.View.SkillIssueBro.Board
             Grid.SetColumn(greenPawn, column);
             Grid.SetRow(greenPawn, row);
             MainGrid.Children.Add(greenPawn);
+            greenPawn.button.Click += OnPawnClicked;
         }
 
         public void AddRedPawn(int column, int row)
@@ -56,6 +79,20 @@ namespace board_games.View.SkillIssueBro.Board
             Grid.SetColumn(redPawn, column);
             Grid.SetRow(redPawn, row);
             MainGrid.Children.Add(redPawn);
+            redPawn.button.Click += OnPawnClicked;
+        }
+
+    }
+
+    public class PawnClickedEventArgs : EventArgs
+    {
+        public int Column { get; }
+        public int Row { get; }
+
+        public PawnClickedEventArgs(int column, int row)
+        {
+            Column = column;
+            Row = row;
         }
     }
 }

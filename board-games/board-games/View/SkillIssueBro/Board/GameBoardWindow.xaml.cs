@@ -2,9 +2,11 @@
 using board_games.Model.CommonEntities;
 using board_games.Model.SkillIssueBroEntities;
 using board_games.View.SkillIssueBro.Dice;
+using board_games.View.SkillIssueBro.Pawns;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
@@ -26,6 +28,11 @@ namespace board_games.View.SkillIssueBro.Board
     /// </summary>
     public partial class GameBoardWindow : UserControl
     {
+        private int _leftDiceValue = 0;
+        private int _rightDiceValue = 0;
+        private UIElement _leftDice;
+        private UIElement _rightDice;
+        private int _currentPlayerTries = 2;
         // temporary hardcoded players
         private List<Player> _players = new List<Player> { 
             new Player(1, "Egg"),
@@ -41,64 +48,169 @@ namespace board_games.View.SkillIssueBro.Board
             InitializeComponent();
             Loaded += GameBoardWindow_Loaded;
             column1.rollButton.ButtonClicked += RollButton_Clicked;
+            gameBoard.PawnClicked += OnPawnClicked;
+            
+
+        }
+
+        private void OnPawnKilled(object sender)
+        {
+            SpawnPawns(skillIssueBroController.GetPawns());
+        }
+
+        private void ShowCurrentPlayerColorEllipse()
+        {
+            string color = skillIssueBroController.GetCurrentPlayerColor();
+            var ellipse = new Ellipse();
+            Color playerColor;
+            switch (color){
+                case "b":
+                    playerColor = Colors.Blue; break;
+                case "y":
+                    playerColor = Colors.Yellow; break;
+                case "g":
+                    playerColor = Colors.Green; break;
+                case "r":
+                    playerColor = Colors.Red; break;
+                default:
+                    playerColor = Colors.White; break;
+            }
+            Brush brush = new SolidColorBrush(playerColor);
+            ellipse.Fill = brush;
+            ellipse.Height = 100;
+            ellipse.Width = 100;
+            column2.column2Grid.Children.Add(ellipse);
+        }
+
+        private void HideDice()
+        {
+            column1.column1Grid.Children.Remove(_leftDice);
+            column2.column2Grid.Children.Remove(_rightDice);
+        }
+
+        private void RerollDice()
+        {
+            _leftDiceValue = 0;
+            _rightDiceValue = 0;
+
+            ClearPawnChildren();
+            SpawnPawns(skillIssueBroController.GetPawns());
+            HideDice();
+            column1.column1Grid.Children[1].Visibility = Visibility.Visible;
+        }
+
+        private void SwitchToNextTurn()
+        {
+            _leftDiceValue = 0;
+            _rightDiceValue = 0;
+            _currentPlayerTries = 2;
+
+            ClearPawnChildren();
+            SpawnPawns(skillIssueBroController.GetPawns());
+            skillIssueBroController.ChangeCurrentPlayer();
+            ShowCurrentPlayerColorEllipse();
+            HideDice();
+            column1.column1Grid.Children[1].Visibility = Visibility.Visible;
+        }
+
+        private void OnPawnClicked(object sender, PawnClickedEventArgs e)
+        {
+            
+            int column = e.Column;
+            int row = e.Row;
+
+            try
+            {
+                skillIssueBroController.MovePawnBasedOnClick(column, row, _leftDiceValue, _rightDiceValue);
+                if(_leftDiceValue != _rightDiceValue)
+                {
+                    SwitchToNextTurn();
+                }
+                else
+                {
+                    RerollDice();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if(ex.Message.Equals("Can't move pawn yet"))
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                else if (ex.Message.Equals("You have to roll two 6s!"))
+                {
+                    MessageBox.Show(ex.Message);
+                    if (_leftDiceValue != _rightDiceValue)
+                    {
+                        SwitchToNextTurn();
+                    }
+                    else
+                    {
+                        RerollDice();
+                    }
+                }
+                else
+                {
+                    // penalize player to hurry game 
+                    _currentPlayerTries--;
+                    if(_currentPlayerTries == 0)
+                    {
+                        MessageBox.Show("Tries left 0\nSkipping turn");
+                        SwitchToNextTurn();
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message + "\nTries left 1");
+                    }
+                }
+                
+                
+            }
         }
 
 
         private void RollButton_Clicked(object sender, EventArgs e)
         {
-            //skillIssueBroController.HandleRollButtonClick();
-            int valueOfLeftDice = skillIssueBroController.RollDice();
-            int valueOfRightDice = skillIssueBroController.RollDice();
+            _leftDiceValue = skillIssueBroController.RollDice();
+            _rightDiceValue = skillIssueBroController.RollDice();
             
             // show the dice in the view
-            GenerateLeftDice(valueOfLeftDice);
-            GenerateRightDice(valueOfRightDice);
-
-
-            // actually move the pawn
+            GenerateLeftDice(_leftDiceValue);
+            GenerateRightDice(_rightDiceValue);
+            
         }
 
         private void GenerateLeftDice(int value)
         {
-            switch(value)
+            
+
+            switch (value)
             {
                 case 1:
-                    var leftDice1 = new DiceWithNumber1();
-                    Grid.SetColumn(leftDice1, 0);
-                    Grid.SetRow(leftDice1, 1);
-                    column1.column1Grid.Children.Add(leftDice1);
+                    _leftDice = new DiceWithNumber1();
                     break;
                 case 2:
-                    var leftDice2 = new DiceWithNumber2();
-                    Grid.SetColumn(leftDice2, 0);
-                    Grid.SetRow(leftDice2, 1);
-                    column1.column1Grid.Children.Add(leftDice2);
+                    _leftDice = new DiceWithNumber2();
                     break;
                 case 3:
-                    var leftDice3 = new DiceWithNumber3();
-                    Grid.SetColumn(leftDice3, 0);
-                    Grid.SetRow(leftDice3, 1);
-                    column1.column1Grid.Children.Add(leftDice3);
+                    _leftDice = new DiceWithNumber3();
                     break;
                 case 4:
-                    var leftDice4 = new DiceWithNumber2();
-                    Grid.SetColumn(leftDice4, 0);
-                    Grid.SetRow(leftDice4, 1);
-                    column1.column1Grid.Children.Add(leftDice4);
+                    _leftDice = new DiceWithNumber4();
                     break;
                 case 5:
-                    var leftDice5 = new DiceWithNumber5();
-                    Grid.SetColumn(leftDice5, 0);
-                    Grid.SetRow(leftDice5, 1);
-                    column1.column1Grid.Children.Add(leftDice5);
+                    _leftDice = new DiceWithNumber5();
                     break;
                 default:
-                    var leftDice6 = new DiceWithNumber6();
-                    Grid.SetColumn(leftDice6, 0);
-                    Grid.SetRow(leftDice6, 1);
-                    column1.column1Grid.Children.Add(leftDice6);
+                    _leftDice = new DiceWithNumber6();
                     break;
             }
+
+            // Add the leftDice to the grid and store the reference in the dictionary
+            Grid.SetColumn(_leftDice, 0);
+            Grid.SetRow(_leftDice, 1);
+            column1.column1Grid.Children.Add(_leftDice);
         }
 
         private void GenerateRightDice(int value)
@@ -106,42 +218,28 @@ namespace board_games.View.SkillIssueBro.Board
             switch (value)
             {
                 case 1:
-                    var rightDice1 = new DiceWithNumber1();
-                    Grid.SetColumn(rightDice1, 0);
-                    Grid.SetRow(rightDice1, 1);
-                    column2.column2Grid.Children.Add(rightDice1);
+                    _rightDice = new DiceWithNumber1();
                     break;
                 case 2:
-                    var rightDice2 = new DiceWithNumber2();
-                    Grid.SetColumn(rightDice2, 0);
-                    Grid.SetRow(rightDice2, 1);
-                    column2.column2Grid.Children.Add(rightDice2);
+                    _rightDice = new DiceWithNumber2();
                     break;
                 case 3:
-                    var rightDice3 = new DiceWithNumber3();
-                    Grid.SetColumn(rightDice3, 0);
-                    Grid.SetRow(rightDice3, 1);
-                    column2.column2Grid.Children.Add(rightDice3);
+                    _rightDice = new DiceWithNumber3();
                     break;
                 case 4:
-                    var rightDice4 = new DiceWithNumber2();
-                    Grid.SetColumn(rightDice4, 0);
-                    Grid.SetRow(rightDice4, 1);
-                    column2.column2Grid.Children.Add(rightDice4);
+                    _rightDice = new DiceWithNumber4();
                     break;
                 case 5:
-                    var rightDice5 = new DiceWithNumber5();
-                    Grid.SetColumn(rightDice5, 0);
-                    Grid.SetRow(rightDice5, 1);
-                    column2.column2Grid.Children.Add(rightDice5);
+                    _rightDice = new DiceWithNumber5();
                     break;
                 default:
-                    var rightDice6 = new DiceWithNumber6();
-                    Grid.SetColumn(rightDice6, 0);
-                    Grid.SetRow(rightDice6, 1);
-                    column2.column2Grid.Children.Add(rightDice6);
+                    _rightDice = new DiceWithNumber6();
                     break;
             }
+
+            Grid.SetColumn(_rightDice, 0);
+            Grid.SetRow(_rightDice, 1);
+            column2.column2Grid.Children.Add(_rightDice);
         }
 
 
@@ -150,6 +248,9 @@ namespace board_games.View.SkillIssueBro.Board
             // create the controller when the window is loaded
             skillIssueBroController = new SkillIssueBroMainGameController(_players);
             SpawnPawns(skillIssueBroController.GetPawns());
+            ShowCurrentPlayerColorEllipse();
+
+            skillIssueBroController.PawnKilled += OnPawnKilled;
         }
 
         private void SpawnPawns(List<Pawn> pawnsToSpawn)
@@ -187,5 +288,23 @@ namespace board_games.View.SkillIssueBro.Board
             }
         }
 
+
+      
+        private void ClearPawnChildren()
+        {
+            
+            for (int i = gameBoard.MainGrid.Children.Count - 1; i >= 0; i--)
+            {
+                
+                if (gameBoard.MainGrid.Children[i] is PawnBlue ||
+                    gameBoard.MainGrid.Children[i] is PawnYellow ||
+                    gameBoard.MainGrid.Children[i] is PawnGreen ||
+                    gameBoard.MainGrid.Children[i] is PawnRed)
+                {
+                   
+                    gameBoard.MainGrid.Children.RemoveAt(i);
+                }
+            }
+        }
     }
 }
