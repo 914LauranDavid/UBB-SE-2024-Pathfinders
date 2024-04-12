@@ -1,4 +1,7 @@
-﻿using board_games.View;
+﻿using board_games.Model.CommonEntities;
+using board_games.Model.GameOfLife;
+using board_games.Model.GameOfLife.Cards;
+using board_games.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +29,11 @@ namespace board_games
         private const int TotalNumberOfEventTiles = 3 * NumberOfEventTilesByCategory;
         private const int NumberOfGreenTiles = 8;
         private const string tileNameCommonRoot = "Tile";
+        private int _spinnerValue;
+        private GameOfLifeBoard _gameOfLifeBoard = new GameOfLifeBoard(123);
+        private BitmapImage _spinnerDisplay = new BitmapImage(new Uri("D:/board-games/board-games/board-games/Resources/SpinnerValues/Spinner10.png", UriKind.Absolute));
+        //new BitmapImage(new Uri("../../Resources/SpinnerValues/Spinner1.png", UriKind.Relative));
+        private const string commonFileRoot = "../../Resources/SpinnerValues/Spinner";
         public GameOfLife_MainWindow()
         {
             InitializeComponent();
@@ -104,6 +112,24 @@ namespace board_games
         {
             this.NavigationService.Navigate(new HostJoinView());
         }
-    }
-}
 
+        private void SpinnerActionArea_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            _spinnerValue = _gameOfLifeBoard.SpinSpinner();
+            string currentSpinnerDisplay = commonFileRoot + _spinnerValue.ToString();
+            _spinnerDisplay = new BitmapImage(new Uri(currentSpinnerDisplay, UriKind.Relative));
+            ImageControl.Source = _spinnerDisplay;
+        }
+
+        private void ActionArea_Click(object sender, RoutedEventArgs e)
+        {
+            _spinnerValue = _gameOfLifeBoard.SpinSpinner();
+            string currentSpinnerDisplay = commonFileRoot + _spinnerValue.ToString();
+            currentSpinnerDisplay += ".png";
+            _spinnerDisplay = new BitmapImage(new Uri(currentSpinnerDisplay, UriKind.Relative));
+            //_spinnerDisplay = new BitmapImage(new Uri("D:/board-games/board-games/board-games/Resources/SpinnerValues/Spinner10.png", UriKind.Absolute));
+            ImageControl.Source = _spinnerDisplay;
+        }
+    }
+
+}

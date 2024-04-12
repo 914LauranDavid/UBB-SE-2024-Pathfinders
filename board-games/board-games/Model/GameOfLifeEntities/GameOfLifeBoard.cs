@@ -59,5 +59,9 @@ namespace board_games.Model.GameOfLife
         {
             _currentPlayerId = currentPlayerId;
         }
+        public int SpinSpinner()
+        {
+            return _spinner.RollSpinner();
+        }
     }
 }
