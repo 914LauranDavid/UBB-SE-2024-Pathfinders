@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="board_games.View.SkillIssueBro.Menus.SkillIssueBroNumberPlayers"
+﻿<Page x:Class="board_games.View.SkillIssueBro.Menus.SkillIssueBroNumberPlayers"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:board_games.View.SkillIssueBro.Menus"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <Grid Height="1080" Width="1920" Background="LightYellow">
+    <Viewbox>
+        <Grid Height="1080" Width="1920" Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="90"></RowDefinition>
@@ -73,9 +74,10 @@
             </Button>
 
 
-            <Button Margin="155,0" FontSize="30" Width="224" Height="52"  Foreground="White" Background="Black" Grid.Column="0" Grid.Row="1" Content="Back" HorizontalAlignment="Left"></Button>
+                <Button Click="OnBackButtonClicked" Margin="155,0" FontSize="30" Width="224" Height="52"  Foreground="White" Background="Black" Grid.Column="0" Grid.Row="1" Content="Back" HorizontalAlignment="Left"></Button>
         </Grid>
 
 
     </Grid>
-</UserControl>
+    </Viewbox>
+</Page>

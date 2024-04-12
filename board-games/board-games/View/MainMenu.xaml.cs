@@ -1,4 +1,5 @@
-﻿using System;
+﻿using board_games.View.SkillIssueBro.Menus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace board_games.View
     /// <summary>
     /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class MainMenu : UserControl
+    public partial class MainMenu : Page
     {
         public MainMenu()
         {
@@ -29,5 +30,19 @@ namespace board_games.View
         {
 
         }
+        private void OnSiBButtonClicked(object sender, RoutedEventArgs e)
+        {
+   
+
+            this.NavigationService.Navigate(new SkillIssueBroMainMenu());
+        }
+
+        private void OnGoLButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+
+            this.NavigationService.Navigate(new StartView());
+        }
+
     }
 }

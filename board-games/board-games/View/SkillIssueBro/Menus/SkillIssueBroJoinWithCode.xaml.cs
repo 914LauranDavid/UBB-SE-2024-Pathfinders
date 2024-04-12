@@ -18,7 +18,7 @@ namespace board_games.View.SkillIssueBro.Menus
     /// <summary>
     /// Interaction logic for SkillIssueBroJoinWithCode.xaml
     /// </summary>
-    public partial class SkillIssueBroJoinWithCode : UserControl
+    public partial class SkillIssueBroJoinWithCode : Page
     {
         public SkillIssueBroJoinWithCode()
         {

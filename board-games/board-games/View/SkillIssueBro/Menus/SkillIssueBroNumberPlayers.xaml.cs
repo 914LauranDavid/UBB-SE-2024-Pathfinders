@@ -18,11 +18,18 @@ namespace board_games.View.SkillIssueBro.Menus
     /// <summary>
     /// Interaction logic for SkillIssueBroNumberPlayers.xaml
     /// </summary>
-    public partial class SkillIssueBroNumberPlayers : UserControl
+    public partial class SkillIssueBroNumberPlayers : Page
     {
         public SkillIssueBroNumberPlayers()
         {
             InitializeComponent();
+        }
+
+        private void OnBackButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+
+            this.NavigationService.Navigate(new SkillIssueBroMainMenu());
         }
     }
 }

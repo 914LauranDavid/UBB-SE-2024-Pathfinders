@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="board_games.View.MainMenu"
+﻿<Page x:Class="board_games.View.MainMenu"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -40,11 +40,11 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="60">Game of live</TextBlock>
-                <Button  Grid.Row="1" Background="Transparent" Margin="184,40,92,106">
-                    <Image  Width="1132" Height="259"Height="781"  Source="https://gaming-cdn.com/img/products/10616/pcover/1920x620/10616.jpg?v=1698224708" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"></Image>
+                <Button x:Name="GoLButton" Click="OnGoLButtonClicked" Grid.Row="1" Background="Transparent" Margin="184,40,92,106">
+                    <Image  Width="1132" Height="431"  Source="https://gaming-cdn.com/img/products/10616/pcover/1920x620/10616.jpg?v=1698224708" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"></Image>
                 </Button>
                 <TextBlock VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.Column="1" FontSize="60" Grid.Row="0">Skill Issue Bro</TextBlock>
-                <Button Background="Transparent" Grid.Column="1" Grid.Row="1" Margin="169,16,211,91" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="SiBButton" Click="OnSiBButtonClicked" Background="Transparent" Grid.Column="1" Grid.Row="1" Margin="169,16,211,91" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -67,4 +67,4 @@
             </Grid>
         </Grid>
     </Viewbox>
-</UserControl>
+</Page>
