@@ -32,7 +32,7 @@
             <Button x:Name="BackButton" Height="67" Canvas.Left="1806" Canvas.Top="975" Width="60" BorderBrush="Transparent" Background="Transparent" Click="BackButton_Click"/>
             <Button x:Name="ChoosePawnStyleButton" Height="139" Canvas.Left="279" Canvas.Top="401" Width="1406" BorderBrush="Transparent" Background="Transparent" Click="ChoosePawnStyleButton_Click"/>
             <Button x:Name="ChooseBoardStyleButton" Height="139" Canvas.Left="239" Canvas.Top="580" Width="1446" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ChooseBoardStyleButton_Click"/>
-            <Button x:Name="ChooseCardSetStyleButton" Height="139" Canvas.Left="159" Canvas.Top="747" Width="1596" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="ChooseCardSetStyleButton" Height="139" Canvas.Left="159" Canvas.Top="747" Width="1596" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ChooseCardSetStyleButton_Click"/>
         </Canvas>
     </Viewbox>
 

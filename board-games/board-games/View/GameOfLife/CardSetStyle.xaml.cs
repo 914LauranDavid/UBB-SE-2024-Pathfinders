@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace board_games.View.GameOfLife
 {
     /// <summary>
-    /// Interaction logic for BoardStyle.xaml
+    /// Interaction logic for CardSetStyle.xaml
     /// </summary>
-    public partial class BoardStyle : Page
+    public partial class CardSetStyle : Page
     {
         private bool isPicture1Displayed = true;
-        private BitmapImage _boardLight;
-        private BitmapImage _boardDark;
-        public BoardStyle()
+        private BitmapImage _cardSetLight;
+        private BitmapImage _cardSetDark;
+        public CardSetStyle()
         {
             InitializeComponent();
-            _boardLight = new BitmapImage(new Uri("../../Resources/board_style_light.png", UriKind.Relative));
-            _boardDark = new BitmapImage(new Uri("../../Resources/board_style_dark.png", UriKind.Relative));
+            _cardSetLight = new BitmapImage(new Uri("../../Resources/cardset_light.png", UriKind.Relative));
+            _cardSetDark = new BitmapImage(new Uri("../../Resources/cardset_dark.png", UriKind.Relative));
 
             DisplayCurrentPicture();
         }
@@ -36,11 +36,11 @@ namespace board_games.View.GameOfLife
         {
             if (isPicture1Displayed)
             {
-                ImageControl.Source = _boardLight;
+                ImageControl.Source = _cardSetLight;
             }
             else
             {
-                ImageControl.Source = _boardDark;
+                ImageControl.Source = _cardSetDark;
             }
         }
 

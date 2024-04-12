@@ -40,5 +40,10 @@ namespace board_games.View.GameOfLife
         {
             this.NavigationService.Navigate(new BoardStyle());
         }
+
+        private void ChooseCardSetStyleButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new CardSetStyle());
+        }
     }
 }
