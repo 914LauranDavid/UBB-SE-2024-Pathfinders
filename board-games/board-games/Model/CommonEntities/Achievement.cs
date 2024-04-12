@@ -8,8 +8,8 @@ namespace board_games.Model.CommonEntities
 {
     internal enum GameCategory
     {
-        SkillIssueBro,
-        GameOfLife
+        SkillIssueBro = 0, 
+        GameOfLife = 1,
     }
 
     internal class Achievement

@@ -32,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\clouds.jpg" />
     <Resource Include="Resources\host_join_background.png" />
     <Resource Include="Resources\host_waiting_for_players.png" />
