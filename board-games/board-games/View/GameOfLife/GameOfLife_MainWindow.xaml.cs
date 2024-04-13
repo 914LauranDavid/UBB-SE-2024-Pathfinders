@@ -121,8 +121,7 @@ namespace board_games
             // display the card
             // tap somewhere (x? outside card?) to resume game
         }
-    }
-}
+
 
 
         private void SpinnerActionArea_MouseUp(object sender, MouseButtonEventArgs e)
@@ -145,4 +144,5 @@ namespace board_games
     }
 
 }
+
 
