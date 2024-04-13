@@ -1352,6 +1352,7 @@
             <TextBlock x:Name="RoundNumberTextBlock" Height="59" Canvas.Left="723" TextWrapping="Wrap" Canvas.Top="10" Width="157" FontSize="60" FontFamily="Bahnschrift SemiBold" Foreground="#FF2D2D2D" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock Height="59" Canvas.Left="904" TextWrapping="Wrap" Canvas.Top="10" Width="170" Text="TURN:" FontSize="60" FontFamily="Bahnschrift SemiBold" Foreground="#FF2D2D2D" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock x:Name="PlayerTurnIndicatorTextBlock" Height="59" Canvas.Left="1097" TextWrapping="Wrap" Canvas.Top="10" Width="440" FontSize="60" FontFamily="Bahnschrift SemiBold" Foreground="#FF2D2D2D" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image x:Name="CardDisplayImageControl" Width="593" Height="967" Canvas.Left="686" Canvas.Top="82" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Canvas>
     </Viewbox>
 

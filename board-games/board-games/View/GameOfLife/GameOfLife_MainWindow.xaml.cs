@@ -104,6 +104,14 @@ namespace board_games
         {
             this.NavigationService.Navigate(new HostJoinView());
         }
+
+        private void DisplayCard(string Category)
+        {
+            // if player is on a special tile
+            // from Category, generate a random number (associated to a card file name)
+            // display the card
+            // tap somewhere (x? outside card?) to resume game
+        }
     }
 }
 
