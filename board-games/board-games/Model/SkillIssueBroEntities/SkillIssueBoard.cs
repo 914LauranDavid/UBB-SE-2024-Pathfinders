@@ -58,5 +58,11 @@ namespace board_games.Model.SkillIssueBroEntities
         {
             return _sixSidedDice;
         }
+
+        public void UpdatePawns(List<Pawn> newPawns)
+        {
+            _pawns = newPawns;
+            //SaveGameState();
+        }
     }
 }

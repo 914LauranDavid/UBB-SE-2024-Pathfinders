@@ -12,23 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using board_games.View.SkillIssueBro.Board;
 
-namespace board_games.View.SkillIssueBro.Board
+namespace board_games.View.SkillIssueBro.Menus
 {
     /// <summary>
-    /// Interaction logic for LeaveButton.xaml
+    /// Interaction logic for SkillIssueBroJoinWithCode.xaml
     /// </summary>
-    public partial class LeaveButton : UserControl
+    public partial class SkillIssueBroJoinWithCode : Page
     {
-        public event EventHandler ButtonClicked;
-        public LeaveButton()
+        public SkillIssueBroJoinWithCode()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OnClickJoin(object sender, RoutedEventArgs e)
         {
-            ButtonClicked?.Invoke(this, EventArgs.Empty);
+            this.NavigationService.Navigate(new GameBoardWindow());
         }
     }
 }

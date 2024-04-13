@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace board_games.View.SkillIssueBro.Board
+namespace board_games.View.SkillIssueBro.Menus
 {
     /// <summary>
-    /// Interaction logic for LeaveButton.xaml
+    /// Interaction logic for SkillIssueBroHost.xaml
     /// </summary>
-    public partial class LeaveButton : UserControl
+    public partial class SkillIssueBroHost : Page
     {
-        public event EventHandler ButtonClicked;
-        public LeaveButton()
+        public SkillIssueBroHost()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

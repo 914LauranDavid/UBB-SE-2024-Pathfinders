@@ -28,6 +28,7 @@ CONSTRAINT PK_Players PRIMARY KEY(PlayerId)
 -- achievements
 CREATE TABLE Achievements(
 AchievementId INT IDENTITY(1,1),
+AchievementGameId INT NOT NULL,
 AchievementTitle VARCHAR(100) NOT NULL,
 AchievementDescr VARCHAR(150) NOT NULL,
 
@@ -86,16 +87,20 @@ CONSTRAINT UK_Pawn_Room UNIQUE(SiBGameRoomId, SiBPawnId)
 
 -- GoL
 CREATE TABLE CardSets(
-CardSetsId INT IDENTITY(1,1),
+CardSetsId INT,
 CardSetName VARCHAR(50) NOT NULL,
 
 CONSTRAINT PK_CardSets PRIMARY KEY(CardSetsId),
 CONSTRAINT UK_CardSets_CardSetName UNIQUE(CardSetName)
 )
 
+INSERT INTO CardSets VALUES (0, 'Health'), (1, 'Career'), (2, 'Social')
+
 CREATE TABLE Tiles(
 TileId INT IDENTITY(1,1),
 TileColor INT NOT NULL,
+CentreXPosition FLOAT,
+CentreYPosition FLOAT,
 
 CONSTRAINT PK_Tiles PRIMARY KEY(TileId),
 CONSTRAINT UK_Tiles_TileColor UNIQUE(TileColor),
@@ -105,7 +110,9 @@ CONSTRAINT FK_CardSets FOREIGN KEY(TileColor) REFERENCES CardSets(CardSetsId) ON
 CREATE TABLE Cards(
 CardId INT IDENTITY(1,1),
 CardType INT NOT NULL,
-CardEffectDescription VARCHAR(150) NOT NULL,
+PathToTexture VARCHAR(150) NOT NULL,
+CardEffect VARCHAR(150) NOT NULL,
+IsConsideredBad Tinyint NOT NULL,
 
 CONSTRAINT PK_Cards PRIMARY KEY(CardId),
 CONSTRAINT FK_Cards_CardSets FOREIGN KEY(CardType) REFERENCES CardSets(CardSetsId) ON DELETE CASCADE
@@ -128,10 +135,12 @@ CREATE TABLE GoLPawns(
 GoLPawnId INT IDENTITY(1,1),
 CenterXPosition FLOAT NOT NULL,
 CenterYPosition FLOAT NOT NULL,
+TileId INT NOT NULL,
 PlayerId INT NOT NULL,
 
 
 CONSTRAINT PK_GoLPawns PRIMARY KEY(GoLPawnId),
+CONSTRAINT FL_GoLPawns_Tiles FOREIGN KEY(TileId) REFERENCES Tiles(TileId) ON DELETE CASCADE,
 CONSTRAINT FK_GoLPawns_Players FOREIGN KEY(PlayerId) REFERENCES Players(PlayerId) ON DELETE CASCADE
 )
 
@@ -168,3 +177,6 @@ OwnedAbId INT NOT NULL REFERENCES OwnedAbilities(OwnedAbId),
 CardId INT NOT NULL REFERENCES Cards(CardId),
 UNIQUE(GoLGameRoomId, GoLPawnId, OwnedAbId)
 )
+
+
+

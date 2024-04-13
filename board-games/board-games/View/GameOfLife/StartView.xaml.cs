@@ -46,8 +46,7 @@ namespace board_games.View
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             // Should go to Choose Game Page
-            
-            throw new NotImplementedException();
+            this.NavigationService.Navigate(new MainMenu());
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
