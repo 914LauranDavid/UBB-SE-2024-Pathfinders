@@ -1,24 +1,10 @@
 ﻿using board_games.Controller;
 using board_games.Model.CommonEntities;
-using board_games.Model.SkillIssueBroEntities;
 using board_games.View.SkillIssueBro.Dice;
 using board_games.View.SkillIssueBro.Pawns;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.WebSockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace board_games.View.SkillIssueBro.Board
@@ -40,7 +26,6 @@ namespace board_games.View.SkillIssueBro.Board
             new Player(3, "Gigi"),
             new Player(4, "Flower")
         };
-
 
         private SkillIssueBroMainGameController skillIssueBroController;
         public GameBoardWindow()

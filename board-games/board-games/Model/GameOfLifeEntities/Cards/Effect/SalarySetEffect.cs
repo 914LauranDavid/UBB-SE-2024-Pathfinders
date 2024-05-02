@@ -22,6 +22,11 @@ namespace board_games.Model.GameOfLife.Cards.Effect
             this._additionalEffect = additionalEffect;
         }
 
+        public int GetSalaryAmount()
+        {
+            return _salarySetAmount;
+        }
+
         public override void DoEffect()
         {
             throw new NotImplementedException("DoEffect will be implemented");

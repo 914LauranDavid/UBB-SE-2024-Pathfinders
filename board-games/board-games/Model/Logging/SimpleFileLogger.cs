@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace board_games.Model.Logging
 {
@@ -28,7 +24,6 @@ namespace board_games.Model.Logging
         public SimpleFileLogger(string fileName) : this(fileName, 20) { }
 
         public SimpleFileLogger() : this(_defaultFileName) { }
-
 
         public void Log(string message, LogLevel level)
         {

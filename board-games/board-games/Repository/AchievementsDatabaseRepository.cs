@@ -1,11 +1,6 @@
 ﻿using board_games.Model.CommonEntities;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace board_games.Repository
 {
@@ -35,9 +30,8 @@ namespace board_games.Repository
 
             }
 
-            for (int i = 0; i < achivementsTable.Rows.Count; i++) {
+            for (int i = 0; i < achivementsTable.Rows.Count; i++)
                 achievements.Add(new Achievement((int)achivementsTable.Rows[i][0], (string)achivementsTable.Rows[i][2], (string)achivementsTable.Rows[i][3], (GameCategory)(int)achivementsTable.Rows[i][1]));
-            }
 
             return achievements;
         }
@@ -65,11 +59,7 @@ namespace board_games.Repository
             }
 
             for (int i = 0; i < achivementsTable.Rows.Count; i++)
-            {
                 achievements.Add(new Achievement((int)achivementsTable.Rows[i][0], (string)achivementsTable.Rows[i][2], (string)achivementsTable.Rows[i][3], (GameCategory)(int)achivementsTable.Rows[i][1]));
-            }
-
-
 
             return achievements;
         }
@@ -97,11 +87,7 @@ namespace board_games.Repository
             }
 
             for (int i = 0; i < achivementsTable.Rows.Count; i++)
-            {
                 achievements.Add(new Achievement((int)achivementsTable.Rows[i][0], (string)achivementsTable.Rows[i][2], (string)achivementsTable.Rows[i][3], (GameCategory)(int)achivementsTable.Rows[i][1]));
-            }
-
-
 
             return achievements;
         }
@@ -111,7 +97,6 @@ namespace board_games.Repository
             List<Achievement> achievements = new List<Achievement>();
 
             string queryStatement = "SELECT a.AchivementId, a.AchievementGameId, a.AchivementTitle, a.AchievementDescr FROM Achievements a INNER JOIN PlayerAchivements ap ON a.AchievementId = ap.AchievementId WHERE ap.PlayerId=@playerId AND a.AchievementGameId=@game";
-
 
             DataTable achivementsTable = new DataTable("Achievements");
 
@@ -126,15 +111,10 @@ namespace board_games.Repository
                 serverConnection.Open();
                 dataAdapter.Fill(achivementsTable);
                 serverConnection.Close();
-
             }
 
             for (int i = 0; i < achivementsTable.Rows.Count; i++)
-            {
                 achievements.Add(new Achievement((int)achivementsTable.Rows[i][0], (string)achivementsTable.Rows[i][2], (string)achivementsTable.Rows[i][3], (GameCategory)(int)achivementsTable.Rows[i][1]));
-            }
-
-
 
             return achievements;
         }

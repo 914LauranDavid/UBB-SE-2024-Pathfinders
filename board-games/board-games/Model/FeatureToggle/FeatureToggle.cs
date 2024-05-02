@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace board_games.src.FeatureToggle
+﻿namespace board_games.src.FeatureToggle
 {
     public class FeatureToggle
     {
@@ -17,7 +11,7 @@ namespace board_games.src.FeatureToggle
 
         public FeatureToggle(Dictionary<string, bool> featureState)
         {
-            this._featureStates = featureState;
+            _featureStates = featureState;
         }
 
         public FeatureToggle(List<string> featureNames)

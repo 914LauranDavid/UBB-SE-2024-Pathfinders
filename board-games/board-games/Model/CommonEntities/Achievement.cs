@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace board_games.Model.CommonEntities
+﻿namespace board_games.Model.CommonEntities
 {
     internal enum GameCategory
     {
@@ -25,9 +19,7 @@ namespace board_games.Model.CommonEntities
             _name = name;
             _description = description;
             _gameCategory = gameCategory;
-
         }
-
         public bool CheckAchievementCompletition(int playerId)
         {
             // database call

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace board_games.Model.CommonEntities
+﻿namespace board_games.Model.CommonEntities
 {
     internal class Tile
     {
@@ -14,9 +8,9 @@ namespace board_games.Model.CommonEntities
 
         public Tile(int tileId, float centerXPosition, float centerYPosition)
         {
-            this._tileId = tileId;
-            this._centerXPosition = centerXPosition;
-            this._centerYPosition = centerYPosition;
+            _tileId = tileId;
+            _centerXPosition = centerXPosition;
+            _centerYPosition = centerYPosition;
         }
 
         public float GetCenterXPosition() { return _centerXPosition; }

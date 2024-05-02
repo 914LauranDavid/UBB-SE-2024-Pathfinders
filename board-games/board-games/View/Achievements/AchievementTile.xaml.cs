@@ -1,31 +1,14 @@
-﻿using board_games.Model.CommonEntities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace board_games.View.Achievements
+﻿namespace board_games.View.Achievements
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using board_games.Model.CommonEntities;
+
     /// <summary>
     /// Interaction logic for AchievementTile.xaml
     /// </summary>
     public partial class AchievementTile : UserControl
     {
-        public AchievementTile()
-        {
-            InitializeComponent();
-        }
-
         public static readonly DependencyProperty AchievementProperty =
             DependencyProperty.Register(
                 "Achievement",
@@ -33,12 +16,19 @@ namespace board_games.View.Achievements
                 typeof(AchievementTile),
                 new PropertyMetadata(null, OnAchievementChanged));
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AchievementTile"/> class.
+        /// </summary>
+        public AchievementTile()
+        {
+            InitializeComponent();
+        }
+
         internal Achievement Achievement
         {
             get { return (Achievement)GetValue(AchievementProperty); }
             set { SetValue(AchievementProperty, value); }
         }
-
 
         private static void OnAchievementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

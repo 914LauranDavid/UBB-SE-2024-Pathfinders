@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace board_games.Model.Logging
+﻿namespace board_games.Model.Logging
 {
     /// <summary>
     /// Interface for a simple logger. Method "shutDown" should always be called when the logger will no longer be used.

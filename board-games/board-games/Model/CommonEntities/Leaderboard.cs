@@ -1,9 +1,4 @@
 ﻿using board_games.src.Sort;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace board_games.Model.CommonEntities
 {
@@ -23,7 +18,7 @@ namespace board_games.Model.CommonEntities
             if (otherPlayerWithScore == null)
                 return 1;
 
-            return this._score.CompareTo(otherPlayerWithScore._score);
+            return _score.CompareTo(otherPlayerWithScore._score);
         }
 
         public Player Player

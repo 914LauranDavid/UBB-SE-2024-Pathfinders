@@ -1,10 +1,5 @@
 ﻿using board_games.Model.CommonEntities;
 using board_games.Model.SkillIssueBroEntities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace board_games.Controller
 {
@@ -16,10 +11,8 @@ namespace board_games.Controller
         private List<Pawn> _pawns;
         private int generatedPawnIds = 0; // temporary solution, fix if needed or delete comment
         private int _currentPlayerIndex;
-
         public delegate void PawnKilledEventHandler(object sender);
         public event PawnKilledEventHandler PawnKilled;
-
 
         public SkillIssueBroMainGameController(List<Player> players)
         {
@@ -152,8 +145,6 @@ namespace board_games.Controller
                     _pawns.Add(redPawn);
                 }
             }
-
-
         }
 
         private List<SiBTile> GenerateTiles()
@@ -251,12 +242,7 @@ namespace board_games.Controller
             {
                 siBTiles.Add(new SiBTile(count++, 5, i));
             }
-
-
             return siBTiles;
-
-
-
         }
         public List<Pawn> GetPawns()
         {
@@ -577,16 +563,12 @@ namespace board_games.Controller
             {
                 case 0:
                     return "b";
-                    break;
                 case 1:
                     return "y";
-                    break;
                 case 2:
                     return "g";
-                    break;
                 case 3:
                     return "r";
-                    break;
                 default:
                     return "none";
             }

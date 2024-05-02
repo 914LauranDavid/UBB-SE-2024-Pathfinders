@@ -18,6 +18,11 @@ namespace board_games.Model.GameOfLife.Cards.Effect
             this._additionalEffect = additionalEffect;
         }
 
+        public IEffect GetAdditionalEffect()
+        {
+            return _additionalEffect;
+        }
+
         public override void DoEffect()
         {
             throw new NotImplementedException("DoEffect will be implemented");
